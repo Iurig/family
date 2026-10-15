@@ -6,5 +6,6 @@
 # Cargo resolves these paths against the folder that holds `.cargo/`: this repo's root.
 [patch."https://github.com/Iurig/family"]
 family-dsp   = { path = "crates/dsp" }
+family-ui    = { path = "crates/ui" }
 family-wav   = { path = "crates/wav" }
 family-xtask = { path = "crates/xtask" }
