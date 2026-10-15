@@ -1,0 +1,10 @@
+# Builds a plugin against this checkout instead of the rev it pins, for changing family and a
+# plugin together. From the plugin's repo, with family checked out beside it:
+#
+#     cargo test --workspace --config ../family/.cargo/local.toml
+#
+# Cargo resolves these paths against the folder that holds `.cargo/`: this repo's root.
+[patch."https://github.com/Iurig/family"]
+family-dsp   = { path = "crates/dsp" }
+family-wav   = { path = "crates/wav" }
+family-xtask = { path = "crates/xtask" }

@@ -16,11 +16,13 @@ Plugins depend on it by git rev, like nih-plug:
 family-dsp = { git = "https://github.com/Iurig/family", rev = "<commit>" }
 ```
 
-A change here reaches a plugin when that plugin bumps the rev. To work on both at once, with this repo checked out beside the plugin's, build the plugin against this checkout with `local.toml`:
+A change here reaches a plugin when that plugin bumps the rev. To work on both at once, with this repo checked out beside the plugin's, build the plugin against this checkout with `.cargo/local.toml`:
 
 ```sh
-cargo test --workspace --config ../family/local.toml
+cargo test --workspace --config ../family/.cargo/local.toml
 ```
+
+While patched, Cargo rewrites the plugin's `Cargo.lock` to point at the local paths; the next build without `--config` points it back at the pinned rev. Push the change here and bump the plugin's rev before committing the plugin.
 
 ## Rules
 
