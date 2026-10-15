@@ -1,0 +1,23 @@
+[package]
+name        = "family-wav"
+description = "WAV reading and writing for the family's offline tools, and the stats, split and join commands."
+version     = "0.1.0"
+edition.workspace    = true
+publish.workspace    = true
+repository.workspace = true
+
+[dependencies]
+anyhow = "1.0.104"
+clap = { version = "4.6.7", features = ["derive"] }
+family-dsp = { path = "../dsp" }
+hound = "3.5.1"
+
+[dev-dependencies]
+tempfile = "3.27.0"
+
+[lints]
+workspace = true
+
+[[bin]]
+name = "wav"
+path = "src/main.rs"

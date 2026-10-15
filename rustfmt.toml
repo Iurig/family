@@ -1,0 +1,4 @@
+# Matches the format-on-save setup: rustfmt +nightly with comment wrapping.
+# Both options are unstable, so run `cargo +nightly fmt`; stable rustfmt ignores them.
+wrap_comments = true
+comment_width = 100
