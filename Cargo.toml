@@ -1,5 +1,5 @@
 [workspace]
-members  = ["crates/dsp", "crates/wav", "crates/xtask"]
+members  = ["crates/dsp", "crates/ui", "crates/wav", "crates/xtask"]
 resolver = "3"
 
 [workspace.package]
