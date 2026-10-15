@@ -8,6 +8,10 @@ repository.workspace = true
 
 [dependencies]
 libm = "0.2.16"
+serde = { version = "1.0.229", default-features = false, features = ["derive"], optional = true }
+
+[features]
+serde = ["dep:serde"]
 
 [lints]
 workspace = true

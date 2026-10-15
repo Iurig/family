@@ -4,7 +4,7 @@ Code shared by a family of guitar plugins: [Doubler](https://github.com/Iurig/do
 
 | Crate | What it holds |
 |---|---|
-| `family-dsp` | `no_std` DSP: the audited float↔integer conversions and the click statistic |
+| `family-dsp` | `no_std` DSP: the crossover (any number of bands, Linkwitz-Riley, summing flat), the biquad, the audited float↔integer conversions and the click statistic |
 | `family-ui` | The editor look, Night (`docs/family-identity.md`): the dial, switch, lamp and glow, the bundled Archivo, and the shared stylesheet in a plugin's colour |
 | `family-wav` | WAV reading and writing for each plugin's offline `render`, and the `stats`, `split` and `join` commands (also runnable on their own as the `wav` binary) |
 | `family-xtask` | `cargo xtask bundle` and `cargo xtask install`: each plugin's `xtask` is a `main` that calls `family_xtask::main` with its package, bundle name and install folder variable |
