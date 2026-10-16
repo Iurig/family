@@ -1,6 +1,6 @@
 # family
 
-Code shared by a family of guitar plugins: Doubler and Quiet so far. The family has no name yet; this repo will be renamed `<name>-core` when it has one.
+Code shared by a family of guitar plugins: Doubler, Quiet and Drop so far. The family has no name yet; this repo will be renamed `<name>-core` when it has one.
 
 | Crate | What it holds |
 |---|---|
