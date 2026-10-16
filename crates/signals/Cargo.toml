@@ -1,0 +1,13 @@
+[package]
+name        = "family-signals"
+description = "Test support for the family's plugins: synthetic guitar-like signals, noise and their levels."
+version     = "0.1.0"
+edition.workspace    = true
+publish.workspace    = true
+repository.workspace = true
+
+[dependencies]
+family-dsp = { path = "../dsp" }
+
+[lints]
+workspace = true

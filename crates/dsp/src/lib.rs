@@ -11,9 +11,11 @@
     )
 )]
 
+mod average;
 pub mod convert;
 mod crossover;
 mod jump;
 
+pub use average::average_to_di;
 pub use crossover::{BUTTERWORTH_Q, Biquad, Crossover, Steepness, UnsupportedSteepness, prewarp};
-pub use jump::{Jump, largest_jump};
+pub use jump::{Jump, largest_jump, largest_jump_mono};

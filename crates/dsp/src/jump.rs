@@ -1,4 +1,4 @@
-//! The click statistic: the largest sample-to-sample jump in a stereo signal.
+//! The click statistic: the largest sample-to-sample jump in a stereo or mono signal.
 
 /// A jump between two neighbouring samples.
 #[derive(Debug, Clone, Copy, PartialEq)]
@@ -20,6 +20,28 @@ pub fn largest_jump(left: &[f32], right: &[f32]) -> Option<Jump> {
             continue;
         };
         let size = libm::fabsf(l_after - l_before).max(libm::fabsf(r_after - r_before));
+        if largest.is_none_or(|largest| size > largest.size) {
+            largest = Some(Jump {
+                size,
+                sample: index + 1,
+            });
+        }
+    }
+    largest
+}
+
+/// Finds the largest jump in one channel, or `None` if it is shorter than two samples. Of equally
+/// large jumps, the earliest wins.
+///
+/// The same as [`largest_jump`] with `signal` on both sides, for a mono signal such as a DI.
+#[must_use]
+pub fn largest_jump_mono(signal: &[f32]) -> Option<Jump> {
+    let mut largest: Option<Jump> = None;
+    for (index, pair) in signal.windows(2).enumerate() {
+        let &[before, after] = pair else {
+            continue;
+        };
+        let size = libm::fabsf(after - before);
         if largest.is_none_or(|largest| size > largest.size) {
             largest = Some(Jump {
                 size,
