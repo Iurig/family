@@ -35,3 +35,8 @@ missing_debug_implementations = "warn"
 missing_docs                  = "warn"
 unnameable_types              = "warn"
 
+[profile.dev]
+opt-level = 1
+
+[profile.dev.package."*"]
+opt-level = 3
