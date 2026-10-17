@@ -16,7 +16,7 @@
 //! `install` copies `<Name>.vst3` and `<Name>.clap` into the `VST3/` and `CLAP/` folders under the
 //! directory in the plugin's environment variable.
 //!
-//! This wraps `nih_plug_xtask::bundle` instead of using `nih_plug_xtask::main`, because `main`
+//! This wraps `nice_plug_xtask::bundle` instead of using `nice_plug_xtask::main`, because `main`
 //! takes the outermost directory with a `Cargo.toml` as the workspace root, which is the wrong
 //! one when a plugin's repo is checked out inside another (as git worktrees under `.claude/` are).
 
@@ -90,7 +90,7 @@ fn bundle(plugin: &Plugin<'_>, cargo_args: &[String]) -> anyhow::Result<PathBuf>
 
     let target_dir =
         std::env::var_os("CARGO_TARGET_DIR").map_or_else(|| root.join("target"), PathBuf::from);
-    nih_plug_xtask::bundle(&target_dir, package, cargo_args, false)?;
+    nice_plug_xtask::bundle(&target_dir, package, cargo_args, false)?;
     Ok(target_dir.join("bundled"))
 }
 
