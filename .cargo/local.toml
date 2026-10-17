@@ -4,7 +4,7 @@
 #     cargo test --workspace --config ../family/.cargo/local.toml
 #
 # Cargo resolves these paths against the folder that holds `.cargo/`: this repo's root.
-[patch."https://github.com/Iurig/family"]
+[patch."https://github.com/iuri-audio/family"]
 family-dsp     = { path = "crates/dsp" }
 family-signals = { path = "crates/signals" }
 family-ui      = { path = "crates/ui" }

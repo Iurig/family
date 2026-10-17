@@ -15,7 +15,7 @@ Code shared by a family of guitar plugins: Doubler, Quiet and Drop so far. The f
 Plugins depend on it by git rev, like nih-plug:
 
 ```toml
-family-dsp = { git = "https://github.com/Iurig/family", rev = "<commit>" }
+family-dsp = { git = "https://github.com/iuri-audio/family", rev = "<commit>" }
 ```
 
 A change here reaches a plugin when that plugin bumps the rev. To work on both at once, with this repo checked out beside the plugin's, build the plugin against this checkout with `.cargo/local.toml`:
